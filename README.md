@@ -1,1 +1,1 @@
-# Formulario-mips32-Jose-Nunez-Arquitectura
+# Arquitectura-Jose-Nunez
