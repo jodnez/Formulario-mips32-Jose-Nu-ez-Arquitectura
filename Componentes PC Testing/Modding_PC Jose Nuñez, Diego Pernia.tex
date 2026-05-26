@@ -1,0 +1,233 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+
+% ==========================================
+% CONFIGURACIÓN VISUAL Y TIPOGRÁFICA
+% ==========================================
+\definecolor{darkblue}{rgb}{0.0, 0.2, 0.4}
+\definecolor{subtleblue}{rgb}{0.1, 0.4, 0.6}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=darkblue,
+    urlcolor=subtleblue
+}
+
+% Formato de títulos profesionales sin líneas saturadas
+\titleformat{\section}{\large\bfseries\color{darkblue}}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries\color{subtleblue}}{\thesubsection}{1em}{}
+
+% Configuración del encabeza y pie de página
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\itshape Análisis de Hardware para Modding y Testeo}
+\fancyhead[R]{\small\thepage}
+\fancyfoot[C]{\small Universidad de Carabobo}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% Previene que los párrafos se peguen a los títulos al fondo de la página
+\widowpenalty=10000
+\clubpenalty=10000
+
+\begin{document}
+
+% ==========================================
+% PORTADA (PÁGINA 1)
+% ==========================================
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+    {\large\bfseries UNIVERSIDAD DE CARABOBO \par}
+    {\large FACULTAD DE CIENCIAS Y TECNOLOGÍA (FACYT) \par}
+    {\large DEPARTAMENTO DE COMPUTACIÓN \par}
+    \vspace{5cm}
+    {\Large\bfseries Análisis de Componentes de Alta Gama para el Modding Estructural y el Testeo de Videojuegos de Nueva Generación \par}
+    \vspace{9cm}
+    {\large\bfseries Autores:} \\
+    {\large Diego Pernia\par}
+    {\large José Núñez\par}
+    \vfill
+    {\large 26 de Mayo del 2026 \par}
+\end{titlepage}
+
+\newpage
+
+% ==========================================
+% TABLA DE COMPONENTES (PÁGINA 2)
+% ==========================================
+\section{Resumen del Presupuesto y Características Técnicas}
+A continuación se detalla la configuración de hardware seleccionada mediante la plataforma BuildCores. Este sistema ha sido estructurado con componentes de grado entusiasta para cumplir con las exigencias del desarrollo, inyección de código y perfilado de rendimiento en entornos virtuales complejos.
+
+\vspace{0.8cm}
+
+\begin{table}[h!]
+\small
+\centering
+\caption{Especificaciones Técnicas del Sistema de Cómputo Entusiasta}
+\vspace{0.3cm}
+\begin{tabularx}{\textwidth}{l X r}
+\toprule
+\textbf{Componente} & \textbf{Modelo y Características Clave} & \textbf{Precio (USD)} \\
+\midrule
+\textbf{Procesador} & AMD Ryzen 9 9950X (16 núcleos, 32 hilos, 4.3 - 5.7 GHz, AM5) & \$498.00 \\
+\textbf{Tarjeta Gráfica} & ASUS PRIME RTX 5070 12GB GDDR7 OC Edition & \$719.99 \\
+\textbf{Memoria RAM} & G.Skill Ripjaws M5 Neo RGB 64GB (2x32GB) DDR5-6000 CL36 & \$499.99 \\
+\textbf{Almacenamiento} & Western Digital WD\_Black SN850X 4TB M.2 PCIe 4.0 NVMe & \$599.95 \\
+\textbf{Placa Base} & MSI X870 MAG TOMAHAWK WIFI AM5 DDR5 ATX & \$219.86 \\
+\textbf{Refrigeración} & ARCTIC Liquid Freezer III Pro 360mm Black AIO & \$83.99 \\
+\textbf{Fuente de Poder} & Asus ROG Strix Black 1000W Fully Modular 80+ Platinum & \$217.99 \\
+\textbf{Chasis / Case} & Corsair 3200D RS ARGB Black & \$79.99 \\
+\textbf{Ventilación} & MSI MPG F120 ARGB 120mm (Pack de 3) & \$59.99 \\
+\textbf{Pasta Térmica} & Thermal Hero METALLIQ 2g (Compuesto Premium de Alta Gama) & \$16.54 \\
+\midrule
+\multicolumn{2}{l}{\textbf{Costo Total Estimado del Hardware}} & \textbf{\$2996.29} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\newpage
+
+% ==========================================
+% CPU: RYZEN 9 9950X (PÁGINA 3)
+% ==========================================
+\section{Procesador: AMD Ryzen 9 9950X y la Compilación Paralela}
+
+El procesamiento de datos en el modding de videojuegos y el testeo de software moderno requiere una arquitectura con un altísimo paralelismo masivo. El AMD Ryzen 9 9950X, basado en la arquitectura Zen 5 con 16 núcleos físicos y 32 hilos de procesamiento, representa el núcleo operativo fundamental para estas tareas de cómputo intensivo.
+
+\subsection{Compilación y Descompilación de Assets en Modding}
+Cuando se realizan modificaciones profundas en videojuegos (como conversiones totales o parches de código estructurales), es imperativo descompilar los archivos de datos empaquetados del motor original (formatos propietarios como .pak, .rpf o .vpk). Este proceso de descompresión criptográfica y reconstrucción de árboles de directorios depende puramente de la potencia de cómputo bruta del procesador y su IPC (Instrucciones Por Ciclo). El Ryzen 9 9950X mitiga los cuellos de botella temporales distribuyendo los algoritmos de descompresión entre múltiples hilos paralelos, permitiendo que el modder genere compilaciones de prueba en una fracción del tiempo estándar.
+
+\subsection{El Testeo Automático y la Simulación de Entornos}
+En el ámbito del aseguramiento de la calidad (QA Testing), la simulación de múltiples instancias concurrentes del juego (Stress Testing) es una técnica estándar para detectar fugas de memoria y desbordamientos de búfer en condiciones extremas. Gracias a su topología de dos complejos de núcleos (CCDs) interconectados, el procesador puede dedicar núcleos exclusivos a la ejecución fluida del juego bajo prueba, mientras utiliza el resto de la arquitectura para correr analizadores de telemetría, inyectores de scripts automatizados y capturadores de registros en tiempo real sin alterar las métricas reales del rendimiento del software evaluado.
+
+\newpage
+
+% ==========================================
+% GPU: RTX 5070 (PÁGINA 4)
+% ==========================================
+\section{Tarjeta Gráfica: ASUS PRIME RTX 5070 y el Análisis Renderizado}
+
+El renderizado gráfico y el procesamiento computacional de la GPU juegan un rol crítico que va mucho más allá de la simple visualización de fotogramas por segundo. La ASUS PRIME GeForce RTX 5070 de 12GB equipada con memoria GDDR7 redefine las capacidades analíticas en entornos tridimensionales modificados.
+
+\subsection{Inyección de Shaders y Modding Gráfico de Vanguardia}
+El modding visual moderno se apoya extensamente en la implementación de inyecciones en tiempo real (como ReShade avanzado o parches de trazado de rayos nativo). La inclusión de núcleos RT (Ray Tracing Cores) de última generación en la RTX 5070 permite procesar la intersección de rayos lumínicos calculados por mods de iluminación global sin degradar el rendimiento a niveles inoperables. Los 12GB de memoria GDDR7 ofrecen un ancho de banda masivo para cargar texturas modificadas en resolución 4K u 8K directamente en la memoria de video, evitando tirones abruptos causados por el intercambio de datos con la RAM del sistema.
+
+\subsection{Herramientas de Perfilado Gráfico y Captura de Trazas}
+Para un tester de videojuegos, la GPU es la herramienta de diagnóstico primaria para aislar bugs geométricos, fallas de oclusión ambiental o llamadas de dibujado de CPU ineficientes (Draw Calls). Utilizando software de perfilado avanzado como NVIDIA Nsight Graphics o RenderDoc, el tester puede congelar un fotograma exacto y examinar detalladamente la canalización de renderizado (graphics pipeline). La RTX 5070 proporciona el soporte de hardware necesario para rastrear cada vértice, mapa de normales y cómputo de shaders pasados por la API gráfica (DirectX 12 Ultimate o Vulkan), facilitando la detección exacta del origen de un fallo visual.
+
+\newpage
+
+% ==========================================
+% RAM: 64GB DDR5 (PÁGINA 5)
+% ==========================================
+\section{Memoria RAM: G.Skill Ripjaws M5 Neo y la Gestión de Datos Volátiles}
+
+La memoria del sistema es el puente de comunicación de alta velocidad entre el procesador y las unidades de almacenamiento masivo. El kit G.Skill Ripjaws M5 Neo de 64GB DDR5 corriendo a 6000 MHz con una latencia de CL36 establece un umbral de estabilidad óptimo para flujos de trabajo concurrentes de alta densidad de datos.
+
+\subsection{Manipulación de Datos en Tiempo Real y Editores de Motores}
+La edición avanzada de mapas (mapmaking) y la modificación de geometrías tridimensionales requiere mantener abiertos simultáneamente editores pesados como Unreal Engine, Unity o herramientas propietarias, en paralelo con el videojuego bajo entorno de pruebas y herramientas de diseño asistido como Blender. 64 Gigabytes de memoria garantizan que el sistema operativo no se vea forzado a utilizar el archivo de paginación del disco (memoria virtual), manteniendo la latencia de respuesta en nanosegundos y evitando cuellos de botella críticos durante la edición de mallas poligonales masivas.
+
+\subsection{Monitoreo de Consumo y Detección de Fugas de Memoria}
+Durante el proceso de testeo, una de las anomalías más complejas de aislar son las fugas de memoria (cuando el juego reserva memoria RAM pero no la libera tras destruir un objeto). Un tester necesita un entorno con abundante memoria para ejecutar herramientas de diagnóstico de asignación de montículo (Heap Allocation Profiling) como Valgrind o los diagnósticos integrados de Visual Studio. Con un ancho de banda de 6000 MHz optimizado mediante perfiles AMD EXPO, las transferencias de datos entre los registros del depurador y el mapa de direcciones del software probado se ejecutan de manera fluida, agilizando la identificación de punteros huérfanos.
+
+\newpage
+
+% ==========================================
+% STORAGE: 4TB SN850X (PÁGINA 6)
+% ==========================================
+\section{Almacenamiento: WD\_Black SN850X 4TB y el Acceso de Baja Latencia}
+
+El almacenamiento masivo ya no se limita a ser un contenedor pasivo de archivos; en la actualidad, influye directamente en las arquitecturas de software mediante tecnologías de descompresión directa. El Western Digital WD\_Black SN850X de 4TB utiliza la interfaz NVMe PCIe 4.0 para entregar velocidades de lectura secuencial de hasta 7300 MB/s.
+
+\subsection{Sistemas de Archivos Virtuales y Carga Inmediata de Assets}
+En el desarrollo de modificaciones, los archivos modificados a menudo se estructuran sin compresión dentro de carpetas espejo para permitir modificaciones rápidas en caliente (hot-reloading). El SN850X sobresale en el manejo de transferencias de archivos pequeños de manera aleatoria (lecturas de 4K aleatorias), lo cual acelera la velocidad a la que el motor gráfico puede leer scripts modificados, rutinas de inteligencia artificial y tablas de variables directamente del disco sin retrasar la inicialización del motor de ejecución.
+
+\subsection{Estrategias de Testeo de Entrada/Salida (I/O Testing)}
+Un pilar indispensable del testeo moderno es la validación del comportamiento bajo la tecnología DirectStorage. Las GPUs modernas pueden extraer assets directamente de las unidades de estado sólido NVMe sin la intervención directa de los hilos de la CPU. Contar con un SSD de velocidades extremas como el SN850X permite a los analistas comprobar si el videojuego gestiona correctamente los tiempos de carga de texturas transmitidas dinámicamente, validando que no ocurra desvanecimiento (pop-in) de geometrías. Además, sus 4 Terabytes permiten hospedar múltiples copias idénticas del juego en diferentes fases de desarrollo.
+
+\newpage
+
+% ==========================================
+% MOTHERBOARD: X870 MAG TOMAHAWK (PÁGINA 7)
+% ==========================================
+\section{Placa Base: MSI X870 MAG TOMAHAWK y la Integridad de la Infraestructura}
+
+La placa base actúa como el sistema circulatorio y nervioso de todo el hardware. La MSI X870 MAG TOMAHAWK WIFI, construida bajo el chipset de vanguardia AM5, asegura que la distribución de energía y la interconexión de buses operen a su máxima capacidad teórica bajo cargas prolongadas de estrés de desarrollo.
+
+\subsection{Buses PCIe 5.0 y Líneas de Interconexión de Datos Limpias}
+El chipset X870 introduce soporte nativo completo para las líneas de comunicación PCIe 5.0 orientadas al futuro, permitiendo que las ranuras principales mantengan una pureza de señal impecable para futuras expansiones de hardware y aceleradoras de análisis de datos. Para las tareas actuales de modding, esto significa que el bus de la GPU ASUS PRIME RTX 5070 opera sin saturaciones ni pérdidas de ancho de banda, garantizando que el canal de comunicación a través del cual viajan los buffers de diagnóstico de renderizado esté completamente libre de interferencias eléctricas y lógicas.
+
+\subsection{Subsistema de Entrega de Energía (VRM) para Pruebas Estables}
+El modding y el testeo pesado involucran ejecutar el sistema a máxima capacidad durante ciclos continuos de 24 a 48 horas para certificar la estabilidad de un build bajo prueba (Soak Testing). La MSI MAG TOMAHAWK incorpora un robusto sistema de fases de alimentación digital (VRM) con disipadores térmicos pasivos extendidos. Esto asegura que los voltajes suministrados al procesador Ryzen 9 9950X permanezcan perfectamente estables y libres de fluctuaciones (vdrop), preveniendo cierres inesperados del sistema (crashes) que arruinarían sesiones de recolección de datos métricos prolongadas o corromperían las bases de datos de assets del mod.
+
+\newpage
+
+% ==========================================
+% COOLER: LIQUID FREEZER III (PÁGINA 8)
+% ==========================================
+\section{Refrigeración: ARCTIC Liquid Freezer III Pro y el Control Térmico Activo}
+
+El rendimiento sostenido de los semiconductores modernos está intrínsecamente ligado a sus temperaturas de operación debido a los algoritmos de aceleración dinámica integrados en el hardware (como Precision Boost Overdrive de AMD). El enfriador líquido AIO ARCTIC Liquid Freezer III Pro de 360mm ofrece una disipación térmica crítica.
+
+\subsection{Prevención del Estrangulamiento Térmico (Thermal Throttling)}
+Cuando el procesador se encuentra ejecutar tareas exhaustivas como el cálculo de mapas de iluminación de una escena (Light Baking) o la codificación de un instalador binario para un mod complejo, las temperaturas de los núcleos pueden alcanzar sus límites estructurales en segundos. Si el sistema alcanza los 95°C, reducirá automáticamente sus frecuencias de reloj para protegerse, extendiendo drásticamente el tiempo requerido para finalizar los trabajos de desarrollo. La bomba integrada optimizada y el radiador de alta densidad de 360mm del Liquid Freezer III absorben y disipan de manera eficiente los vatios térmicos producidos por el 9950X, manteniendo las frecuencias en su rango máximo sostenido de forma continua.
+
+\subsection{Estabilización de Entornos para la Medición Fiable de Rendimiento}
+Para realizar un testeo de rendimiento verídico y científico (Benchmarking), todas las variables externas del hardware deben mantenerse constantes. Si un tester evalúa la optimización de código de un mod utilizando una solución térmica deficiente, las variaciones térmicas alterarán las frecuencias del procesador de forma caótica, provocando que los datos de cuadros por segundo (FPS) y tiempos de fotograma (frametimes) medidos varíen entre ejecuciones sucesivas de la prueba. Al estabilizar la curva térmica en niveles óptimos, la solución de ARCTIC proove un entorno de prueba controlado en el cual las diferencias de rendimiento medidas se deben exclusivamente al código de software optimizado o modificado.
+
+\newpage
+
+% ==========================================
+% PSU: ROG STRIX 1000W PLATINUM (PÁGINA 9)
+% ==========================================
+\section{Fuente de Poder: Asus ROG Strix 1000W y el Soporte Energético Seguro}
+
+La calidad de la energía eléctrica suministrada a los componentes internos define la longevidad del sistema informático y previene fallas silenciosas difíciles de diagnosticar. La fuente Asus ROG Strix de 1000W cuenta con la exigente certificación 80+ Platinum.
+
+\subsection{Estabilidad Eléctrica Frente a Picos de Carga de Transitorios}
+Tanto las tarjetas gráficas modernas de arquitectura avanzada como los procesadores multinúcleo sufren picos de consumo eléctrico extremadamente veloces (transitorios de potencia) cuando pasan instantáneamente de un estado de reposo a renderizar una explosión masiva de partículas en un juego modificado. La fuente Asus ROG Strix de 1000W posee capacitores de especificación militar capaces de absorber estas demandas instantáneas de energía sin activar por error los sistemas de protección contra sobrecorriente (OCP), evitando apagones repentinos del PC durante pruebas complejas donde se estresa simultáneamente el procesador y el subsistema gráfico.
+
+\subsection{Certificación de Eficiencia y Regulación Precisa de Raíles}
+La certificación 80+ Platinum asegura que más del 92\% de la energía eléctrica extraída de la red de corriente alterna se transforma de manera limpia en corriente continua utilizable por el hardware, reduciendo significativamente la generación de calor residual interno dentro de la propia fuente. Adicionalmente, la regulación de voltaje ultra precisa en los raíles clave de +12V garantiza que los componentes analíticos de la tarjeta madre no experimenten ruidos ni rizos eléctricos (ripple), protegiendo la integridad física de los datos cargados en la memoria y los discos durante fases críticas de modificación del código del firmware del sistema.
+
+\newpage
+
+% ==========================================
+% CASE Y FANS: CORSAIR + MSI (PÁGINA 10)
+% ==========================================
+\section{Chasis y Ventilación: Corsair 3200D RS y el Flujo de Presión Positiva}
+
+El contenedor de los componentes y la distribución del flujo de aire ambiental externo determinan de manera directa la eficiencia de los disipadores térmicos internos individuales de la CPU y GPU. La combinación del chasis Corsair 3200D RS ARGB Black con los ventiladores MSI MPG F120 ARGB conforma un circuito de ventilación optimizado.
+
+\subsection{Dinámica de Fluidos Térmicos en Sesiones Continuas de Modding}
+Un chasis con un panel frontal de malla de alta permeabilidad acústica y física, como el Corsair 3200D, elimina las restricciones de entrada de aire fresco ambiental. Cuando los ventiladores MSI MPG F120 se configuran estratégicamente para ingresar aire fresco por el frontal y expulsar el aire caliente remanente por las zonas trasera y superior a través del radiador del AIO, se previene de forma exitosa la formación de bolsas de calor estáticas sobre el circuito impreso de la GPU y los disipadores del almacenamiento M.2 NVMe, permitiendo que la máquina opere de forma fresca incluso en zonas geográficas cálidas.
+
+\subsection{Configuración de Presión Positiva para la Reducción de Mantenimiento}
+Al instalar tres ventiladores frontales MSI controlados por modulación por ancho de pulsos (PWM) dedicados a la inyección forzada de aire, se establece una configuración de presión estática positiva en el interior de la torre. Esto significa que el aire tiende a escapar de forma natural por todas las rendijas estructurales del case, impidiendo la entrada de partículas de polvo microscópicas por las uniones mecánicas desprovistas de filtros. Para los analistas de sistemas y testers de software, esto se traduce de manera inmediata en una disminución dramática de los tiempos requeridos para tareas de limpieza de hardware, evitando paradas de mantenimiento imprevistas en la estación de trabajo y manteniendo la disipación térmica en niveles de fábrica por períodos de tiempo sumamente prolongados.
+
+\newpage
+
+% ==========================================
+% THERMAL COMPOUND: METALLIQ (PÁGINA 11)
+% ==========================================
+\section{Pasta Térmica: Thermal Hero METALLIQ y el Puente Micro-Interfacial}
+
+A nivel microscópico, las superficies metálicas del difusor térmico integrado (IHS) del microprocesador y la base de cobre del bloque del enfriador líquido AIO no son perfectamente lisas, conteniendo miles de micro-imperfecciones que atrapan aire térmicamente aislante. El compuesto premium Thermal Hero METALLIQ de 2 gramos resuelve este problema físico.
+
+\subsection{Conductividad Térmica de Grado Avanzado para Cargas Críticas}
+El uso de un compuesto de alto desempeño como Thermal Hero METALLIQ asegura una transferencia térmica inmediata desde los silicios de los núcleos Zen 5 hacia el sistema de refrigeración líquida. Al eliminar por completo la resistencia térmica interfacial, el calor generado por los picos instantáneos de cómputo espacial durante la inyección de código binario o el desempaque masivo de mods gráficos se desplaza sin retardos físicos hacia el radiador. Esto disminuye significativamente la temperatura en reposo (idle) del procesador y reduce los picos térmicos instantáneos, dotando al sistema de un margen extra (headroom) fundamental para el overclocking técnico o el ajuste preciso de voltajes mediante curvas de optimización.
+
+\subsection{Estabilidad de Fase Mecánica y Longevidad del Compuesto}
+A diferencia de los compuestos térmicos convencionales de base cerámica de baja calidad, que sufren degradación acelerada y pérdida de humedad (efecto de bombeo o pump-out) debido a los ciclos continuos de calentamiento y enfriamiento extremo comunes durante los ciclos de testeo de estrés de software, las propiedades metalúrgicas avanzadas de Thermal Hero METALLIQ garantizan que mantenga su consistencia viscosa e integridad física inalterada por años. Esto reduce drásticamente los riesgos de degradación súbita del rendimiento térmico de la estación de trabajo, blindando el hardware contra sobrecalentamientos imprevistos y asegurando que las métricas de rendimiento del procesador se mantengan estables, científicamente reproducibles y predecibles en cada prueba futura.
+
+\end{document}
